@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     fun httpPost(url: String,body: RequestBody, success: (response: Response) -> Unit, failure: () -> Unit) {
         val request = Request.Builder()
                 .url(url)
-                .post(body)
                 .addHeader("Accept", "application/json")
+                .post(body)
                 .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 Log.v("INFO", "Failed")
             }
 
-            override fun onResponse(call: Call, response: Response) {
+            override fun onResponse(call: Call?, response: Response) {
                 success(response)
                 Log.v("INFO", "Succeeded")
             }
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     fun login(login: String, password: String){
         Toast.makeText(this, "dziala (" + login + ":" + password + ")", Toast.LENGTH_SHORT ).show()
         val url = "http://192.168.0.15:3000/login"
-        val body = RequestBody.create(FORM, "session[login]=" + login + "&session[password]" + password)
+        val body = RequestBody.create(FORM, "session[login]=" + login + "&session[password]=" + password)
 
         httpPost(url, body,
                 fun (response: Response) {
@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
                     else if (json.has("token")){
                         this.runOnUiThread{
                             Toast.makeText(this, json["token"] as String, Toast.LENGTH_SHORT).show()
-                            //val intent = android.content.Intent(this, Main2Activity::class.java)
-                            //startActivity(intent)
+                            val intent = android.content.Intent(this, Main2Activity::class.java)
+                            startActivity(intent)
                        }
                     }
                 },
