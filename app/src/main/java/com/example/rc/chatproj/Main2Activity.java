@@ -79,6 +79,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            finish();
             return true;
         }
 
@@ -95,10 +96,10 @@ public class Main2Activity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    Tab1Contacts tab1 = new Tab1Contacts();
+                    Tab1ContactsLV tab1 = new Tab1ContactsLV();
                     return  tab1;
                 case 1:
-                    Tab2Chats tab2 = new Tab2Chats();
+                    Tab2LayoutView tab2 = new Tab2LayoutView();
                     return tab2;
                 case 2:
                     Tab3Search tab3 = new Tab3Search();

@@ -14,7 +14,7 @@ public class Tab3Search extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab3_search, container, false);
+        View rootView = inflater.inflate(R.layout.tab3_searchfx, container, false);
         return rootView;
     }
 }

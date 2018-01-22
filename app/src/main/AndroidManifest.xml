@@ -26,6 +26,8 @@
         <activity android:name=".Tab1Contacts" />
         <activity android:name=".MessageBody" />
         <activity android:name=".MessageWindow" />
+        <activity android:name=".Tab2LayoutView" />
+        <activity android:name=".UserWindow"></activity>
     </application>
 
 </manifest>

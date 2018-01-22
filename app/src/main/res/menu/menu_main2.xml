@@ -5,11 +5,6 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="Opcje"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_settings1"
-        android:orderInCategory="100"
         android:title="Wyloguj się"
         app:showAsAction="never" />
 </menu>
